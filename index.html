@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@todou | demo</title>
+    <meta name="description" content="fr" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Outfit:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="bg" aria-hidden="true">
+      <video id="bgVideo" class="bg-video" muted loop playsinline preload="auto"></video>
+      <div class="bg-shade"></div>
+      <canvas id="fx" class="fx"></canvas>
+      <canvas id="trail" class="fx trail"></canvas>
+    </div>
+
+    <div id="cursor" class="cursor" aria-hidden="true"></div>
+
+    <div id="gate" class="gate">
+      <button type="button" id="enterBtn" class="enter">
+        <span id="enterText">click to enter...</span>
+      </button>
+    </div>
+
+    <main id="app" class="app" hidden>
+      <div class="meta">
+        <button type="button" class="pill" id="uidPill" title="Copy UID"></button>
+        <div class="pill" id="viewsPill"></div>
+      </div>
+
+      <section id="card" class="card">
+        <div class="avatar-wrap">
+          <img id="avatar" class="avatar" alt="" draggable="false" />
+          <span id="statusDot" class="dot offline" title="Status"></span>
+        </div>
+
+        <div class="name-row">
+          <h1 id="name" class="name"><span id="nameText"></span><span class="sparkle" aria-hidden="true"></span></h1>
+          <div id="badges" class="badges"></div>
+        </div>
+        <p id="alias" class="alias"></p>
+        <p id="bio" class="bio"></p>
+
+        <div id="presence" class="presence">
+          <img id="presenceAvatar" class="presence-avatar" alt="" draggable="false" />
+          <div class="presence-body">
+            <div class="presence-line">
+              <strong id="presenceName"></strong>
+              <span id="guildTag" class="tag" hidden></span>
+            </div>
+            <div id="presenceActivity" class="presence-activity">Connecting…</div>
+            <div id="presenceMeta" class="presence-meta">Discord</div>
+          </div>
+          <img id="presenceArt" class="presence-art" alt="" hidden draggable="false" />
+        </div>
+
+        <nav id="socials" class="socials" aria-label="Links"></nav>
+      </section>
+
+      <aside class="player" aria-label="Music player">
+        <img id="trackCover" class="track-cover" alt="" draggable="false" />
+        <button type="button" id="prevBtn" class="icon-btn" aria-label="Previous">⏮</button>
+        <button type="button" id="playBtn" class="icon-btn play" aria-label="Play">▶</button>
+        <button type="button" id="nextBtn" class="icon-btn" aria-label="Next">⏭</button>
+        <div class="track-meta">
+          <div id="trackTitle" class="track-title"></div>
+          <button type="button" id="seek" class="seek" aria-label="Seek">
+            <span id="progress" class="progress"></span>
+          </button>
+        </div>
+        <input id="volume" class="volume" type="range" min="0" max="1" step="0.01" value="0.4" aria-label="Volume" />
+      </aside>
+    </main>
+
+    <div id="toast" class="toast" role="status"></div>
+    <audio id="audio" preload="auto"></audio>
+
+    <script src="js/config.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <defs>
+    <filter id="g" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="1.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <path filter="url(#g)" fill="#ffffff" stroke="#c78cff" stroke-width="1.2"
+    d="M6 4l16 10.5-7.2 1.6 4.2 9.2-3.4 1.5-4.3-9.4L6 24.5V4z"/>
+</svg>

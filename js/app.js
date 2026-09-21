@@ -230,7 +230,8 @@
   function initSnow() {
     resize(fx);
     flakes.length = 0;
-    for (let i = 0; i < 80; i++) flakes.push(spawn(true));
+    const count = window.matchMedia("(max-width: 640px)").matches ? 36 : 70;
+    for (let i = 0; i < count; i++) flakes.push(spawn(true));
   }
   function tickSnow() {
     ctx.clearRect(0, 0, fx.width, fx.height);
@@ -299,6 +300,9 @@
     gate.classList.add("out");
     app.hidden = false;
     bumpViews();
+    video.muted = true;
+    video.setAttribute("playsinline", "");
+    video.setAttribute("webkit-playsinline", "");
     try {
       await video.play();
     } catch (_) {}

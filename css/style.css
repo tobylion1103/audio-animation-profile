@@ -57,7 +57,8 @@ body.custom-cursor * {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at center, transparent 10%, rgba(0, 0, 0, 0.5) 60%, rgba(0, 0, 0, 0.82) 100%);
+    radial-gradient(ellipse at center, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.55) 35%, rgba(0, 0, 0, 0.78) 100%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.55));
 }
 
 .fx {
@@ -148,14 +149,16 @@ body.custom-cursor .cursor.on {
 }
 
 .pill {
-  border: 1px solid rgba(199, 140, 255, 0.18);
-  background: var(--glass);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(10, 10, 16, 0.82);
   color: #fff;
   backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-radius: 999px;
   padding: 0.4rem 0.75rem;
   font: inherit;
   font-size: 0.78rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
 }
 
 .card {
@@ -164,6 +167,13 @@ body.custom-cursor .cursor.on {
   transform-style: preserve-3d;
   will-change: transform;
   animation: rise 0.7s ease both;
+  padding: 1.35rem 1.2rem 1.4rem;
+  border-radius: 1.35rem;
+  background: rgba(8, 8, 14, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(18px) saturate(1.1);
+  -webkit-backdrop-filter: blur(18px) saturate(1.1);
 }
 
 @keyframes rise {
@@ -231,7 +241,12 @@ body.custom-cursor .cursor.on {
   font-family: var(--display);
   font-size: clamp(1.9rem, 4vw, 2.4rem);
   font-weight: 800;
-  text-shadow: 0 0 16.5px #fff;
+  color: #fff;
+  text-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.95),
+    0 0 10px rgba(0, 0, 0, 0.9),
+    0 0 18px rgba(0, 0, 0, 0.75),
+    0 0 14px rgba(199, 140, 255, 0.45);
 }
 
 .sparkle {
@@ -272,21 +287,24 @@ body.custom-cursor .cursor.on {
   place-items: center;
   font-size: 0.68rem;
   font-weight: 700;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 0 12px rgba(199, 140, 255, 0.35);
+  color: #fff;
+  background: rgba(20, 16, 32, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.45), 0 0 12px rgba(199, 140, 255, 0.35);
 }
 
 .alias {
   margin: 0.3rem 0 0;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.78);
   font-size: 0.82rem;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.85);
 }
 
 .bio {
   margin: 0.55rem 0 1.15rem;
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.88);
   font-size: 1rem;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.85);
 }
 
 .presence {
@@ -296,10 +314,12 @@ body.custom-cursor .cursor.on {
   text-align: left;
   padding: 0.8rem 0.9rem;
   border-radius: 1rem;
-  background: var(--glass);
-  border: 1px solid var(--border);
-  backdrop-filter: blur(14px);
+  background: rgba(10, 10, 16, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   margin-bottom: 1.15rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
 .presence-avatar {
@@ -328,13 +348,17 @@ body.custom-cursor .cursor.on {
 .presence-activity {
   margin-top: 0.15rem;
   font-size: 0.84rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.95);
 }
 
 .presence-meta {
   margin-top: 0.1rem;
   font-size: 0.74rem;
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.presence-line strong {
+  color: #fff;
 }
 
 .presence-art {
@@ -362,19 +386,20 @@ body.custom-cursor .cursor.on {
   place-items: center;
   color: #fff;
   text-decoration: none;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(18, 18, 28, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.22);
   font: inherit;
   font-size: 0.72rem;
-  font-weight: 600;
+  font-weight: 700;
   transition: 0.2s ease;
-  box-shadow: 0 0 0 transparent;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
 }
 
 .social:hover {
   transform: translateY(-2px) scale(1.05);
-  background: rgba(199, 140, 255, 0.25);
-  box-shadow: 0 0 18px rgba(199, 140, 255, 0.4);
+  background: rgba(199, 140, 255, 0.55);
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0 18px rgba(199, 140, 255, 0.55);
 }
 
 .player {
@@ -388,10 +413,12 @@ body.custom-cursor .cursor.on {
   gap: 0.55rem;
   padding: 0.65rem 0.8rem;
   border-radius: 1.1rem;
-  background: rgba(12, 12, 18, 0.78);
-  border: 1px solid rgba(199, 140, 255, 0.2);
-  backdrop-filter: blur(16px);
+  background: rgba(8, 8, 14, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   z-index: 20;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
 }
 
 .track-cover {
@@ -436,6 +463,8 @@ body.custom-cursor .cursor.on {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
 }
 
 .seek {
